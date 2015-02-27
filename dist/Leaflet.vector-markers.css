@@ -1,7 +1,7 @@
 /*
 Author: Mathias Schneider
 License: MIT
-Version: 1.0
+Version: 0.0.3
 */
 /* Marker setup */
 .vector-marker {
@@ -16,7 +16,7 @@ Version: 1.0
 .vector-marker path {
   stroke: black;
   stroke-opacity: 0.4;
-  stroke-width: 1;
+  stroke-width: 0;
 }
 .vector-marker.not-accepted {
   opacity: 0.5;

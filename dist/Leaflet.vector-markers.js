@@ -3,10 +3,11 @@
     "use strict";
     L.VectorMarkers = {};
     L.VectorMarkers.version = "1.0.0";
-    L.VectorMarkers.MAP_PIN = 'M16,1 C7.7146,1 1,7.65636364 1,15.8648485 C1,24.0760606 16,51 16,51 C16,51 31,24.0760606 31,15.8648485 C31,7.65636364 24.2815,1 16,1 L16,1 Z';
+    L.VectorMarkers.MAP_PIN = 'M17.501,4c7.444,0,13.5,6.057,13.5,13.501c0,7.865-7.327,16.83-10.494,20.339l-3.006,3.499l-3-3.492 C11.337,34.343,4,25.372,4,17.501C4,10.057,10.057,4,17.501,4 M17.501,0C7.851,0,0,7.851,0,17.501 C0,26.4,7.188,35.709,11.499,40.49l2.969,3.456l3.034,3.531l3.034-3.531l2.975-3.462c4.308-4.78,11.492-14.086,11.492-22.982 C35.002,7.851,27.151,0,17.501,0L17.501,0z';
+    L.VectorMarkers.MAP_PIN_OUTLINE = 'M20.508,37.84c3.167-3.509,10.494-12.474,10.494-20.339C31.002,10.057,24.946,4,17.501,4 C10.057,4,4,10.057,4,17.501c0,7.871,7.337,16.842,10.501,20.346l3,3.492L20.508,37.84z';
     L.VectorMarkers.Icon = L.Icon.extend({
       options: {
-        iconSize: [30, 50],
+        iconSize: [35, 47],
         iconAnchor: [15, 50],
         popupAnchor: [2, -40],
         shadowAnchor: [7, 45],
@@ -15,22 +16,24 @@
         prefix: "fa",
         spinClass: "fa-spin",
         extraClasses: "",
-        icon: "home",
-        markerColor: "blue",
+        icon: null,
+        markerColor: "#858585",
+        markerOutlineColor: "#B4B3B3",
         iconColor: "white"
       },
       initialize: function(options) {
         return options = L.Util.setOptions(this, options);
       },
       createIcon: function(oldIcon) {
-        var div, icon, options, pin_path;
+        var div, icon, options, pin_outline_path, pin_path;
         div = (oldIcon && oldIcon.tagName === "DIV" ? oldIcon : document.createElement("div"));
         options = this.options;
         if (options.icon) {
           icon = this._createInner();
         }
         pin_path = L.VectorMarkers.MAP_PIN;
-        div.innerHTML = '<svg width="32px" height="52px" viewBox="0 0 32 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">' + '<path d="' + pin_path + '" fill="' + options.markerColor + '"></path>' + icon + '</svg>';
+        pin_outline_path = L.VectorMarkers.MAP_PIN_OUTLINE;
+        div.innerHTML = '<svg width="35.002px" height="47.477px" viewBox="0 0 35.002 47.477" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">' + '<path d="' + pin_path + '" fill="' + options.markerColor + '"></path>' + '<path fill="' + options.markerOutlineColor + '" d="' + pin_outline_path + '"/>' + icon + '</svg>';
         this._setIconStyles(div, "icon");
         this._setIconStyles(div, "icon-" + options.markerColor);
         return div;
