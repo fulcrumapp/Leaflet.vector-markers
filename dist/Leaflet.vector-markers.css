@@ -17,6 +17,7 @@ Version: 0.0.3
   stroke: black;
   stroke-opacity: 0.4;
   stroke-width: 0;
+  cursor: pointer;
 }
 .vector-marker.not-accepted {
   opacity: 0.5;

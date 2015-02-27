@@ -18,12 +18,12 @@
   #
   L.VectorMarkers = {}
   L.VectorMarkers.version = "1.0.0"
-  L.VectorMarkers.MAP_PIN = 'M17.501,4c7.444,0,13.5,6.057,13.5,13.501c0,7.865-7.327,16.83-10.494,20.339l-3.006,3.499l-3-3.492 C11.337,34.343,4,25.372,4,17.501C4,10.057,10.057,4,17.501,4 M17.501,0C7.851,0,0,7.851,0,17.501 C0,26.4,7.188,35.709,11.499,40.49l2.969,3.456l3.034,3.531l3.034-3.531l2.975-3.462c4.308-4.78,11.492-14.086,11.492-22.982 C35.002,7.851,27.151,0,17.501,0L17.501,0z'
-  L.VectorMarkers.MAP_PIN_OUTLINE = 'M20.508,37.84c3.167-3.509,10.494-12.474,10.494-20.339C31.002,10.057,24.946,4,17.501,4 C10.057,4,4,10.057,4,17.501c0,7.871,7.337,16.842,10.501,20.346l3,3.492L20.508,37.84z'
+  L.VectorMarkers.MAP_PIN = 'M11.28,3c4.565,0,8.279,4.038,8.279,9c0,5.243-4.494,11.219-6.436,13.558l-1.843,2.333l-1.84-2.328 C7.5,23.228,3,17.247,3,12C3,7.038,6.715,3,11.28,3 M11.28,0C5.061,0,0,5.383,0,12c0,5.982,4.442,12.237,7.108,15.451l1.818,2.3 l2.354,2.977l2.353-2.978l1.821-2.304C18.12,24.232,22.56,17.979,22.56,12C22.56,5.383,17.5,0,11.28,0L11.28,0z'
+  L.VectorMarkers.MAP_PIN_OUTLINE = 'M13.124,25.558C15.066,23.219,19.56,17.243,19.56,12c0-4.962-3.714-9-8.279-9C6.715,3,3,7.038,3,12 c0,5.247,4.5,11.228,6.44,13.563l1.84,2.328L13.124,25.558z'
   L.VectorMarkers.Icon = L.Icon.extend(
     options:
-      iconSize: [ 35, 47 ]
-      iconAnchor: [ 18, 51 ]
+      iconSize: [ 23, 33 ]
+      iconAnchor: [ 11, 35 ]
       popupAnchor: [ 2, -40 ]
       shadowAnchor: [ 8, 55 ]
       shadowSize: [ 54, 51 ]
@@ -48,7 +48,7 @@
       pin_path = L.VectorMarkers.MAP_PIN
       pin_outline_path = L.VectorMarkers.MAP_PIN_OUTLINE
 
-      div.innerHTML = '<svg width="35.002px" height="47.477px" viewBox="0 0 35.002 47.477" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">' +
+      div.innerHTML = '<svg width="22.56px" height="32.729px" viewBox="0 0 22.56 32.729" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">' +
                         '<path d="' + pin_path + '" fill="' + options.markerColor + '"></path>' +
                         '<path fill="' + options.markerOutlineColor + '" d="' + pin_outline_path + '"/>' +
                         icon +
